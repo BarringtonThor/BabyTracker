@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-i&r@8^4g@v4-qw-ww6d_%qai7p0*2&8ps0x#5(_)$w-a-ss#m4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -134,3 +134,9 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'spravesh1818@gmail.com'
+EMAIL_HOST_PASSWORD = 'Didimuma12345@'
+EMAIL_PORT = 587

@@ -4,8 +4,9 @@ from . import views
 
 urlpatterns = [
     # Your URLs...
-    path('token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
-    path('hello/', views.HelloView.as_view(), name='hello'),
-    path('register/',views.RegisterView.as_view(), name='register'),
+    path("token/", jwt_views.TokenObtainPairView.as_view(), name="token_obtain_pair"),
+    path("token/refresh/", jwt_views.TokenRefreshView.as_view(), name="token_refresh"),
+    path("hello/", views.HelloView.as_view(), name="hello"),
+    path("register", views.RegisterView.as_view(), name="register"),
+    path("activate/<slug:uidb64>/<slug:token>/", views.activate, name="activate"),
 ]

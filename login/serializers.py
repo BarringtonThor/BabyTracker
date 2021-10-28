@@ -17,6 +17,7 @@ class UserSerializer(serializers.ModelSerializer):
             validated_data["username"],
             validated_data["email"],
             validated_data["password"],
+            is_active=False,
         )
         return user
 

@@ -4,7 +4,7 @@ from . import views as heroesViews
 from login import views as loginViews
 
 router = routers.DefaultRouter()
-router.register(r'heroes', heroesViews.HeroViewSet)
+#router.register(r'heroes', heroesViews.HeroViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
