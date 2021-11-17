@@ -1,3 +1,5 @@
+from django.http import HttpResponse
 
-def base_view():
-    return "Hello from baby tracker api"
+
+def base_view(request):
+    return HttpResponse("Hello World from babytracker API")
