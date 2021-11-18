@@ -29,6 +29,14 @@ ALLOWED_HOSTS = ["*"]
 
 CORS_ALLOWED_ORIGINS = ["*"]
 CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
 # Application definition
 
 INSTALLED_APPS = [
