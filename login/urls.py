@@ -7,4 +7,5 @@ urlpatterns = [
     path("token/refresh/", jwt_views.TokenRefreshView.as_view(), name="token_refresh"),
     path("register", views.RegisterView.as_view(), name="register"),
     path("activate/<slug:uidb64>/<slug:token>/", views.activate, name="activate"),
+    path("user/current", views.CurrentUserView.as_view(), name="logged-in-user"),
 ]

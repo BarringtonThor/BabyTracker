@@ -71,3 +71,9 @@ def activate(request, uidb64, token):
         )
     else:
         return HttpResponse("Activation link is invalid!")
+
+
+class CurrentUserView(APIView):
+    def get(self, request):
+        serializer = UserSerializer(request.user)
+        return Response(serializer.data)

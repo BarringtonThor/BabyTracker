@@ -15,10 +15,27 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework import routers
 
+import activity_logs
+from blogs import views as blog_views
+from forum import views as forum_views
+from activity_logs import views as activity_log_views
+
+router = routers.DefaultRouter()
+router.register(r"blogs", blog_views.BlogViewSet)
+router.register(r"forum", forum_views.ForumViewSet)
+router.register(r"comment", forum_views.CommentViewSet)
+router.register(r"activity", activity_log_views.ActivityViewSet)
+router.register(r"children", activity_log_views.ChildrenViewSet)
+router.register(r"vaccine", activity_log_views.VaccinationLogsViewSet)
+router.register(r"growth", activity_log_views.GrowthLogsViewSet)
+router.register(r"sleep", activity_log_views.SleepLogsViewSet)
+router.register(r"diaper", activity_log_views.DiaperChangeLogsViewSet)
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("api.urls")),
     path("api/v1/", include("login.urls")),
-    path("blogs/", include("blogs.urls")),
+    path("", include(router.urls)),
+    path("", include("activity_logs.urls")),
 ]

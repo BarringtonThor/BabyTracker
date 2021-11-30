@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-CORS_ALLOWED_ORIGINS = ["*"]
+CORS_ORIGIN_WHITELIST = ["http://127.0.0.1"]
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_METHODS = [
     "DELETE",
@@ -48,9 +48,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "api.apps.ApiConfig",
     "rest_framework",
-    "dashboard",
     "blogs",
     "forum",
+    "activity_logs",
     "whitenoise.runserver_nostatic",
     "corsheaders",
 ]
