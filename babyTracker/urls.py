@@ -38,4 +38,5 @@ urlpatterns = [
     path("api/v1/", include("login.urls")),
     path("", include(router.urls)),
     path("", include("activity_logs.urls")),
+    path("",include("forum.urls"))
 ]
