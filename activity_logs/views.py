@@ -55,3 +55,35 @@ class VaccinationLogsByChild(generics.ListAPIView):
     def get_queryset(self):
         child_id = self.request.query_params.get("child_id")
         return VaccinationLogs.objects.filter(child=child_id)
+
+
+class SleepLogsByChild(generics.ListAPIView):
+    serializer_class = SleepLogsSerializer
+
+    def get_queryset(self):
+        child_id = self.request.query_params.get("child_id")
+        return SleepLogs.objects.filter(child=child_id)
+
+
+class GrowthLogsByChild(generics.ListAPIView):
+    serializer_class = GrowthLogsSerializer
+
+    def get_queryset(self):
+        child_id = self.request.query_params.get("child_id")
+        return GrowthLogs.objects.filter(child=child_id)
+
+
+class DiaperLogsByChild(generics.ListAPIView):
+    serializer_class = DiaperChangeLogsSerializer
+
+    def get_queryset(self):
+        child_id = self.request.query_params.get("child_id")
+        return DiaperChangeLogs.objects.filter(child=child_id)
+
+
+class ChildrenByUser(generics.ListAPIView):
+    serializer_class = ChildrenSerializers
+
+    def get_queryset(self):
+        user_id = self.request.query_params.get("user_id")
+        return Children.objects.filter(parent_id=user_id)

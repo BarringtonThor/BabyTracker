@@ -33,7 +33,7 @@ class Activity(models.Model):
 
 
 class SleepLogs(models.Model):
-    date = models.DateField(auto_now=True)
+    date = models.DateField()
     start = models.TimeField()
     end = models.TimeField()
     child = models.ForeignKey(Children, on_delete=models.CASCADE)
@@ -43,7 +43,7 @@ class SleepLogs(models.Model):
 
 
 class VaccinationLogs(models.Model):
-    date = models.DateField(auto_now=True)
+    date = models.DateField()
     name = models.CharField(max_length=60)
     number_of_doses = models.IntegerField()
     number_of_doses_taken = models.IntegerField()
@@ -54,7 +54,7 @@ class VaccinationLogs(models.Model):
 
 
 class DiaperChangeLogs(models.Model):
-    datetime = models.DateTimeField(auto_now=True)
+    datetime = models.DateTimeField()
     description = models.TextField(max_length=250)
     child = models.ForeignKey(Children, on_delete=models.CASCADE)
 
@@ -63,7 +63,7 @@ class DiaperChangeLogs(models.Model):
 
 
 class GrowthLogs(models.Model):
-    datetime = models.DateField(auto_now=True)
+    datetime = models.DateField()
     height = models.IntegerField()
     child = models.ForeignKey(Children, on_delete=models.CASCADE)
 
